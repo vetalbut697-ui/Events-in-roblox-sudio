@@ -1,0 +1,6 @@
+local button = workspace.button.ClickDetector--присвоєння самої кнопки, що створена всередені об'єкту
+button.MouseClick:Connect(function(player)--створення функції, яка виконується при натисканні на кнопку
+	local money = Instance.new("Part")
+	money.Position = Vector3.new(0,5,0)
+	money.Parent = workspace
+end)
