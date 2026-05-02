@@ -1,0 +1,13 @@
+local tool = script.Parent -- Посилаємося на Tool у воркспейсі, скрипт повинен бути в Tool
+local handle = tool.Handle -- Посилаємося на ручку, що треба щоб персонаж взагалі взяв предмет
+
+-- Функція, яка спрацює при кліку з предметом в руках
+local function onActivate()
+	print("Магія активована гравцем: " .. tool.Parent.Name) -- Tool.Parent у цей момент - це модель гравця
+
+	-- Змінюємо властивості ручки через подію
+	handle.Color = Color3.new(math.random(), math.random(), math.random()) -- Випадковий колір
+end
+
+-- Підключаємо подію Activated
+tool.Activated:Connect(onActivate)
