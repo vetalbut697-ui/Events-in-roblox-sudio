@@ -1,0 +1,9 @@
+--Функція що реагує на фізичний дотик деталі до іншої деталі
+local brick = workspace.Part--Прив'язка до змінної блоку з назвою Part, що знаходиться у Workspace
+local brick2 = workspace.Part2
+brick2.Anchored=false
+local function Touch(B)--Створення функції
+	print('ти торкнувся'.. B.Name)--В консолі буде написано що ти торкнувся та ім'я того об'єкту якого ти торкунвся
+	brick.BrickColor = BrickColor.random()--Зміна кольору на рандомний
+end
+brick.Touched:Connect(Touch)--Підключення функції Touch до блоку
