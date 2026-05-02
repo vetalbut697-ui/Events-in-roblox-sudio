@@ -1,0 +1,10 @@
+--Подія HealthChanged працює тільки при зниженні або збільшенні здоров'я; скрипт працює тільки в StarterCharacterScripts
+local character = script.Parent--Рядок local character = script.Parent каже:"Створи змінну character і поклади в неї той об'єкт, всередині якого лежить цей скрипт".
+local humanoid = character:WaitForChild("Humanoid")--Рядок local humanoid = character:WaitForChild("Humanoid") каже:"Створи змінну humanoid і поклади в неї об'єкт Humanoid з тих ж дочерніх об'єктів, які лежать у character".
+humanoid.Health -= 50--знизити здоров'я на 50 одиниць
+humanoid.HealthChanged:Connect(function(newHealth)
+	if newHealth < 100 then--якщо кількість здоров'я менше 100, то знизити кількість здоров'я до нуля
+		task.wait(3)
+		humanoid.Health = 0
+	end
+end)
